@@ -6,7 +6,7 @@ var path = require('path'),
 
 function getNoteCollection(cb){
 	// Connect to the db
-	mongoClient.connect("mongodb://localhost:27017/boundarytodo", function(err, db) {
+	mongoClient.connect("mongodb://localhost:27017/todomvcmarionette", function(err, db) {
 	  if(err) { return console.dir(err); }
 	  db.createCollection('notes', function(err, collection) {
 	  	cb(collection, db);

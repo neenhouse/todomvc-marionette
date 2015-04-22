@@ -1,4 +1,4 @@
-# ![TodoMVC](media/logo.png)
+# ![TodoMVC](logo.png)
 
 ### This is a forked and heavily modified version of the popular todo mvc project.
 

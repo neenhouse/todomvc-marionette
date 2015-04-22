@@ -28,6 +28,11 @@
 			<span id="todo-count">
 				<strong><%= activeCount %></strong> <%= activeCountLabel() %>
 			</span>
+
+			
+			<button id="clear-completed" <% if (!completedCount) { %>class="hidden"<% } %>>Clear completed (<%= completedCount %>)</button>
+
+
 			<ul id="chartfilters" class="filters">
 				<li class="pie">
 					<a class="selected" href="javascript:void(0);" data-type="pie">Pie</a>
@@ -47,7 +52,7 @@
 					<a href="#/completed">Completed</a>
 				</li>
 			</ul>
-			<button id="clear-completed" <% if (!completedCount) { %>class="hidden"<% } %>>Clear completed (<%= completedCount %>)</button>
+			
 			<div style="clear:both;"></div>
 
 		</script>

@@ -43,7 +43,6 @@ var HighCharts = (function(){
 
 	function renderPieChart(){
 		//pie
-		console.log("render pie");
 		containerTarget.highcharts({
 	        chart: {
 	            plotBackgroundColor: null,

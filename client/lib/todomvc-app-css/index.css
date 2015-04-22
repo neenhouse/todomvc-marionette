@@ -288,7 +288,6 @@ label[for='toggle-all'] {
 
 #chartfilters{
 	width:100px;
-	margin-left:-50px;
 }
 #filters{
 	width:200px;
@@ -328,10 +327,11 @@ label[for='toggle-all'] {
 #clear-completed,
 html #clear-completed:active {
 	float: right;
-	display:inline-block;
+	margin-right:10px;
 	line-height: 20px;
 	text-decoration: none;
 	cursor: pointer;
+	position:relative;
 	visibility: hidden;
 }
 
