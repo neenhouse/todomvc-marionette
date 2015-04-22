@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en" data-framework="marionettejs">
+	<head>
+		<meta charset="utf-8">
+		<title>Marionette • TodoMVC - Chris Nienhuis</title>
+		<link rel="stylesheet" href="optimized/app.css">
+		<link rel="stylesheet" href="lib/todomvc-app-css/index.css">
+	</head>
+	<body>
+		<section id="todoapp">
+			<header id="header"></header>
+			<section id="main"></section>
+			<footer id="footer"></footer>
+		</section>
+		<div id="highcharts-container" style="width:100%; height:400px;"></div>
+		<footer id="info">
+
+			<p>Double-click to edit a todo</p>
+			<p>
+				Created by <a href="http://github.com/jsoverson">Jarrod Overson</a>
+				and <a href="http://github.com/derickbailey">Derick Bailey</a>
+				using <a href="http://marionettejs.com">Backbone.Marionette</a>
+			</p>
+			<p>This version was created by <a href="https://github.com/neenhouse">Chris Nienhuis</a></p>
+			<p>See who else is using marionette at <a href="http://marionettejs.com/">marionettejs.com</a>.</p>
+		</footer>
+		<script type="text/html" id="template-footer">
+			<span id="todo-count">
+				<strong><%= activeCount %></strong> <%= activeCountLabel() %>
+			</span>
+			<ul id="chartfilters" class="filters">
+				<li class="pie">
+					<a class="selected" href="javascript:void(0);" data-type="pie">Pie</a>
+				</li>
+				<li class="bar">
+					<a  href="javascript:void(0);" data-type="bar">Bar</a>
+				</li>
+			</ul>
+			<ul id="filters" class="filters">
+				<li class="all">
+					<a href="#/">All</a>
+				</li>
+				<li class="active">
+					<a href="#/active">Active</a>
+				</li>
+				<li class="completed">
+					<a href="#/completed">Completed</a>
+				</li>
+			</ul>
+			<button id="clear-completed" <% if (!completedCount) { %>class="hidden"<% } %>>Clear completed (<%= completedCount %>)</button>
+			<div style="clear:both;"></div>
+
+		</script>
+		<script type="text/html" id="template-header">
+			<h1>todos</h1>
+			<input id="new-todo" placeholder="What needs to be done?" autofocus>
+		</script>
+		<script type="text/html" id="template-todoItemView">
+			<div class="view">
+				<input class="toggle" type="checkbox" <% if (completed) { %>checked<% } %>>
+				<label><%- title %></label>
+				<button class="destroy"></button>
+			</div>
+			<input class="edit" value="<%- title %>">
+		</script>
+		<script type="text/html" id="template-todoListCompositeView">
+			<input id="toggle-all" type="checkbox">
+			<label for="toggle-all">Mark all as complete</label>
+			<ul id="todo-list"></ul>
+		</script>
+		<!-- app JS -->
+		<script src="optimized/app.js"></script>
+		<script>
+			$(function () {
+				// start the TodoMVC app (defined in js/TodoMVC.js)
+				TodoMVC.start();
+			});
+		</script>
+	</body>
+</html>
